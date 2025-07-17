@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid Layout with Mac Style Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="parent">
+
+    <!-- Header Card -->
+    <div class="div1 card">
+      <div class="card-header">Header 1</div>
+      <div class="card-body">This is the content for section 1</div>
+    </div>
+
+    <!-- Mac-Style Preview Card -->
+    <div class="div2 mac-card">
+      <div class="mac-header">
+        <div class="mac-buttons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <span class="mac-title">Preview</span>
+      </div>
+      <div class="mac-body">
+        <iframe srcdoc="" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <!-- Mac-style Editor: HTML -->
+    <div class="div3 mac-card">
+      <div class="mac-header">
+        <div class="mac-buttons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <span class="mac-title">index.html</span>
+      </div>
+      <div class="mac-body">
+        <textarea placeholder="Enter HTML here"></textarea>
+      </div>
+    </div>
+
+    <!-- Mac-style Editor: CSS -->
+    <div class="div4 mac-card">
+      <div class="mac-header">
+        <div class="mac-buttons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <span class="mac-title">style.css</span>
+      </div>
+      <div class="mac-body">
+        <textarea placeholder="Enter CSS here"></textarea>
+      </div>
+    </div>
+
+    <!-- Mac-style Editor: JS -->
+    <div class="div5 mac-card">
+      <div class="mac-header">
+        <div class="mac-buttons">
+          <span class="btn red"></span>
+          <span class="btn yellow"></span>
+          <span class="btn green"></span>
+        </div>
+        <span class="mac-title">script.js</span>
+      </div>
+      <div class="mac-body">
+        <textarea placeholder="Enter JavaScript here"></textarea>
+      </div>
+    </div>
+
+    <!-- Device List Card -->
+    <div class="div6 card" style="padding: 0;">
+      <div class="card-body">
+        <ul class="device-list">
+          <li><img src="https://img.icons8.com/ios-filled/50/mac-client.png" alt="Mac" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/windows-client.png" alt="Windows" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/linux.png" alt="Linux" class="device-icon" /></li>
+          <!-- Repeating Android icons -->
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/android.png" alt="Android" class="device-icon" /></li>
+          <li><img src="https://img.icons8.com/ios-filled/50/monitor.png" alt="Monitor" class="device-icon" /></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
