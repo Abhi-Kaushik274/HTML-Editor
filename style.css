@@ -1,185 +1,205 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Courier New', monospace;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: 8px;
-    padding: 8px;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  /* Card Styles */
-  .card, .device-list li {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card {
-    border: 1px solid #333;
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-  }
-  
-  .card-header {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #2c3e50;
-    margin-bottom: 8px;
-    padding: 5px;
-  }
-  
-  .card-body {
-    flex: 1;
-    font-size: 0.95em;
-    color: #555;
-    overflow: auto;
-    padding: 10px 0;
-  }
-  
-  .tag {
-    display: inline-block;
-    background-color: #3498db;
-    color: #fff;
-    padding: 2px 8px;
-    font-size: 0.75em;
-    border-radius: 5px;
-    margin-left: 5px;
-  }
-  
-  /* Grid Layout Positions */
-  .div1 { grid-column: span 12; }
-  .div2 { grid-column: span 11; grid-row: 2 / span 7; }
-  .div3 { grid-column: 1 / span 4; grid-row: 9 / span 4; }
-  .div4 { grid-column: 5 / span 4; grid-row: 9 / span 4; }
-  .div5 { grid-column: 9 / span 4; grid-row: 9 / span 4; }
-  .div6 { grid-column: 12; grid-row: 2 / span 7; }
-  
-  /* Mac Style Card */
-  .mac-card {
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-    padding: 0;
-  }
-  
-  .mac-header {
-    height: 25px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    position: relative;
-  }
-  
-  .mac-buttons {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .red { background-color: #ff5f57; }
-  .yellow { background-color: #febc2e; }
-  .green { background-color: #28c840; }
-  
-  .mac-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .mac-body {
-    flex: 1;
-    font-size: 16px;
-    color: #888;
-  }
-  
-  .mac-body iframe,
-  .mac-body textarea {
-    width: 100%;
-    height: 100%;
-    background-color: #f8f8f8;
-    border: none;
-  }
-  
-  .mac-body textarea {
-    resize: none;
-    padding: 12px;
-    font-size: 14px;
-    font-family: 'Courier New', monospace;
-    outline: none;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Placeholder Text */
-  .placeholder {
-    color: #aaa;
-  }
-  
-  /* Device List Styles */
-  .device-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .device-list li {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 12px;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .device-list li:hover {
-    transform: translateY(-5px);
-  }
-  
-  .device-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* border-radius: 8px; */
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+}
+
+.editor {
+  flex: 1;
+  background-color: #252526;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #2d2d2d;
+  color: #ccc;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.tab.active {
+  background: #1e1e1e;
+  color: #fff;
+  font-weight: bold;
+}
+
+.code-input {
+  flex: 1;
+  display: none;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  border: none;
+  padding: 1rem;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+.code-input.active {
+  display: block;
+}
+
+.preview-wrapper {
+  flex: 1;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.preview-toolbar {
+  padding-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.preview-toolbar button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  background: #333;
+  color: white;
+  font-size: 12px;
+}
+
+/* Base Device Frame */
+.device-frame {
+  background: #000;
+  border-radius: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 12px;
+}
+
+/* Desktop View - Modern Monitor with macOS-style controls */
+.device-frame.desktop {
+  width: 100%;
+  max-width: 1440px;
+  height: 900px;
+  margin: auto;
+  background: #1e1e1e;
+  border: 2px solid #000;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Title bar with macOS dots */
+.device-frame.desktop::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background: #ff5f56;
+  border-radius: 50%;
+  box-shadow: 18px 0 #ffbd2e, 36px 0 #27c93f;
+  z-index: 2;
+}
+
+/* Add padding to push iframe below title bar if needed */
+.device-frame.desktop iframe {
+  margin-top: 30px;
+}
+
+/* Tablet View */
+.device-frame.tablet {
+  width: 768px;
+  height: 1024px;
+}
+
+/* Mobile View - iPhone 16 Style */
+.device-frame.mobile {
+  width: 375px;
+  height: 812px;
+  background: #111;
+  border: 5px solid #000;
+  border-radius: 50px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+/* iPhone notch simulation */
+.device-frame.mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 30px;
+  background: #000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 2;
+}
+
+/* iPhone speaker/camera details (optional small circle) */
+.device-frame.mobile::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+.device-frame.mobile iframe,
+.device-frame.tablet iframe {
+  border-radius: 30px;
+}
+
+.device-frame.desktop iframe {
+  border-radius: 0;
+}
